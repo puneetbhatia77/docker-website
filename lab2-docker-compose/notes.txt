@@ -1,0 +1,10 @@
+docker-compose up -d
+
+docker ps
+
+# access php admin at  192.168.56.101:8181 
+access db at           192.168.56.101:8080             # if error then exit VM and login again.
+
+# create account in wordpress at 192.168.56.101:8080  and it will be reflected in php.
+Update wordpress post by php admin and verify in wordpress at 192.168.56.101:8080
+
