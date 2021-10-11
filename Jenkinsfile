@@ -14,7 +14,7 @@ stages {
        stage('Building Image') {
          steps{
             script{
-             dockerImage = docker.build registry + ":$BUILD_NUMBER"
+             sh 'docker build -t apache-image /home/billion'
              }
          }
         }
