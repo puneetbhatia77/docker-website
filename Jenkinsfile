@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = 'saurabhgore65/app-image'
+    registry = 'saurabhgore70/apache-image'
     registryCredential = 'sagoredockerid'
     dockerImage = ''
 }
