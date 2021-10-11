@@ -1,4 +1,9 @@
 pipeline {
+  {
+  enviroment=saurabhgore70/apache-image:v1
+  registry='saurabhgore70'
+  dockerhub=""
+  }
   agent any
 stages {
       stage('Cloning Git') {
@@ -15,13 +20,12 @@ stages {
         }
        stage('Deploy Image') {
           steps{
-             docker.withRegistry('https://registry.hub.docker.com', 'git') 
-            {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-             }   
-      }
-   
+            script{
+              sh 'docker tag apache-image saurabhgore70/apache-image:v1'
+              sh 'docker push saurabhgore70/apache-image:v1'
+            }
+          }
+           
    }
 
   }
