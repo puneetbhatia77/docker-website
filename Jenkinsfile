@@ -15,10 +15,11 @@ stages {
         }
        stage('Deploy Image') {
           steps{
-             script{
-                 sh 'docker tag apache-image saurabhgore70/apache-image:v1'
-                 sh 'docker push saurabhgore70/apache-image:v1'
-            }
+             docker.withRegistry('https://registry.hub.docker.com', 'git') 
+            {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+             }   
       }
    
    }
