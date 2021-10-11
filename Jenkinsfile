@@ -1,9 +1,4 @@
 pipeline {
-  environment {
-    registry = 'saurabhgore70/apache-image'
-    registryCredential = 'saurabhgore70'
-    dockerImage = ''
-}
   agent any
 stages {
       stage('Cloning Git') {
@@ -21,9 +16,8 @@ stages {
        stage('Deploy Image') {
           steps{
              script{
-                 docker.withRegistry( '', registryCredential ) {
-               dockerImage.push()  
-                }
+                 sh 'docker tag apache-image saurabhgore70/apache-image:v1'
+                 sh 'docker push saurabhgore70/apache-image:v1'
             }
       }
    
