@@ -14,7 +14,7 @@ stages {
        stage('Building Image') {
          steps{
             script{
-             sh 'docker build -t apache-image /home/billion'
+             sh 'docker build -t apache-image /home/billion/all-dockerfiles'
              }
          }
         }
