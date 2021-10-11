@@ -1,9 +1,4 @@
 pipeline {
-  {
-  enviroment=saurabhgore70/apache-image:v1
-  registry='saurabhgore70'
-  dockerhub=""
-  }
   agent any
 stages {
       stage('Cloning Git') {
