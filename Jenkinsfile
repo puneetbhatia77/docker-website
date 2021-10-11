@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = 'saurabhgore70/apache-image'
-    registryCredential = 'sagoredockerid'
+    registryCredential = 'saurabhgore70'
     dockerImage = ''
 }
   agent any
