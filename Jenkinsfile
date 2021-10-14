@@ -1,6 +1,9 @@
 pipeline {
   agent any
-stages {
+  environment {
+		DOCKERHUB_CREDENTIALS=credentials('saurabhgore70')
+	}
+ stages {
       stage('Cloning Git') {
         steps{
           git 'https://github.com/saurabhgore-code/SaurabhSimplilearnProject.git'
@@ -13,16 +16,20 @@ stages {
              }
          }
         }
+  stage('login dockerhub'){
+    steps{ 
+      sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+         }
+  }
        stage('Deploy Image') {
           steps{
             script{
-              sh 'docker login -u saurabhgore70'
+              
               sh 'docker tag apache-image saurabhgore70/apache-image:v1'
               sh 'docker push saurabhgore70/apache-image:v1'
             }
           }
-           
-   }
+           }
 
   }
 }
