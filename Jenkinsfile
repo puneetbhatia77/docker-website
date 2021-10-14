@@ -16,6 +16,7 @@ stages {
        stage('Deploy Image') {
           steps{
             script{
+              sh 'docker login -u saurabhgore70'
               sh 'docker tag apache-image saurabhgore70/apache-image:v1'
               sh 'docker push saurabhgore70/apache-image:v1'
             }
