@@ -12,7 +12,7 @@ pipeline {
        stage('Building Image') {
          steps{
             script{
-             sh 'docker build -t python-image /home/billion/dockerfiles'
+             sh 'docker build -t go-image /root'
              }
          }
         }
@@ -25,8 +25,8 @@ pipeline {
           steps{
             script{
               
-              sh 'docker tag python-image saurabhgore70/python-image:v1'
-              sh 'docker push saurabhgore70/python-image:v1'
+              sh 'docker tag go-image saurabhgore70/my-private-repo:v2'
+              sh 'docker push saurabhgore70/my-private-repo:v2'
             }
           }
            }
