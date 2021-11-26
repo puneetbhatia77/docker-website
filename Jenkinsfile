@@ -25,8 +25,8 @@ pipeline {
           steps{
             script{
               
-              sh 'docker tag go-image saurabhgore70/my-private-repo:v2'
-              sh 'docker push saurabhgore70/my-private-repo:v2'
+              sh 'docker tag go-image saurabhgore70/go-image:v2'
+              sh 'docker push saurabhgore70/go-image:v2'
             }
           }
            }
