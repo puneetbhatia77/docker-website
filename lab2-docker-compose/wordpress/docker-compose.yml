@@ -11,7 +11,7 @@ wordpress_db:
     MYSQL_ROOT_PASSWORD: test
 
 phpmyadmin:
-  image: corbinu/docker-phpmyadmin
+  image: phpmyadmin
   links:
     - wordpress_db:mysql
   ports:
